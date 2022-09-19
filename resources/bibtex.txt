@@ -1,6 +1,6 @@
-@inproceedings{author20XXtitle,
-  title={Please cite me},
-  author={Author, First and Author, Second and Author, Third},
-  booktitle={Conference},
-  year={20XX}
+@inproceedings{zhao2022fsig-ip,
+  title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
+  author={Yunqing Zhao, Milad Abdollahzadeh, Keshigeyan Chandrasegaran, Ngai-Man Cheung},
+  booktitle={Neurips},
+  year={2022}
 }

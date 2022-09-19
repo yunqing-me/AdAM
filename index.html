@@ -138,23 +138,28 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">Creative and Descriptive Paper Title</span>
+		<span style="font-size:36px">Few-shot Image Generation via Adaptation-Aware Kernel Modulation</span>
 		<table align=center width=600px>
 			<table align=center width=600px>
 				<tr>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">First Author</a></span>
+							<span style="font-size:18px"><a href="https://yunqing-me.github.io/">Yunqing Zhao*</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Second Author</a></span>
+							<span style="font-size:16px"><a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran*</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Third Author</a></span>
+							<span style="font-size:16px"><a href="https://miladabd.github.io/">Milad Abdollahzadeh*</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:16px"><a href="https://sites.google.com/site/mancheung0407/">Ngai-Man Cheung</a></span>
 						</center>
 					</td>
 				</tr>
@@ -168,7 +173,7 @@
 					</td>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://github.com/richzhang/webpage-template'>[GitHub]</a></span><br>
+							<span style="font-size:24px"><a href='https://github.com/yunqing-me/FSIG-ImportanceProbing-KML'>[GitHub]</a></span><br>
 						</center>
 					</td>
 				</tr>
@@ -181,15 +186,29 @@
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:500px" src="./resources/teaser.png"/>
+						<img class="round" style="width:880px" src="./resources/overview.png"/>
 					</center>
 				</td>
 			</tr>
 		</table>
-		<table align=center width=850px>
+		<table align=center width=880px>
 			<tr>
 				<td>
-					This was a template originally made for <a href="http://richzhang.github.io/colorization/">Colorful Image Colorization</a>. The code can be found in this <a href="https://github.com/richzhang/webpage-template">repository</a>.
+					<p style="text-align:justify; text-justify:inter-ideograph;">
+					<b> Overview and our contributions.</b> <br>
+					<b>- 1: </b>
+					We consider the problem of FSIG with Transfer Learning using very limited target samples (e.g., 10-shot). <br>
+					<b>- 2: </b>
+					Our work makes two contributions: 
+					<ul>
+						<li>We discover that when the close proximity assumption between source-target domain is relaxed, SOTA FSIG methods, e.g., EWC (Li et al.), CDC (Ojha et al.), DCL (Zhao et al.).
+							which consider only source domain/source task in knowledge preserving perform no better than a baseline fine-tuning method, e.g., TGAN, (Wang et al.)).</li>
+						<li>We propose a novel adaptation-aware kernel modulation for FSIG that achieves SOTA performance across source / target domains with different proximity. </li>
+					</ul>
+					<b>- 3: </b>
+					Schematic diagram of our proposed Importance Probing Mechanism: 
+					We measure the importance of each kernel for the target domain after probing and 
+					preserve source domain knowledge that is important for target domain adaptation. The same operations are applied to discriminator.
 				</td>
 			</tr>
 		</table>
@@ -201,7 +220,8 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				This is my abstract.
+				<p style="text-align:justify; text-justify:inter-ideograph;">
+				Few-shot image generation (FSIG) aims to learn to generate new and diverse samples given an extremely limited number of samples from a domain, e.g., 10 training samples. Recent work has addressed the problem using transfer learning approach, leveraging a GAN pretrained on a large-scale source domain dataset and adapting that model to the target domain based on very limited target domain samples. Central to recent FSIG methods are knowledge preserving criteria, which aim to select a subset of source model's knowledge to be preserved into the adapted model. However, a major limitation of existing methods is that their knowledge preserving criteria consider only source domain/source task, and they fail to consider target domain/adaptation task in  selecting source model's knowledge, casting doubt on their suitability for setups of different proximity between source and target domain. Our work makes two contributions. As our first contribution, we re-visit recent FSIG works and their experiments. Our important finding is that, under setups which assumption of  close proximity between source and target domains is relaxed, existing state-of-the-art (SOTA) methods which consider only source domain/source task in knowledge preserving perform no better than a baseline fine-tuning method. To address the limitation of existing methods, as our second contribution, we propose adaptation-aware kernel modulation to address general FSIG of different source-target domain proximity. Extensive experimental results show that the proposed method consistently achieves SOTA performance across source/target domains of different proximity, including challenging setups when source and target domains are more apart.
 			</td>
 		</tr>
 	</table>
@@ -224,9 +244,9 @@
 	</table>
 	<hr>
 
-	<center><h1>Code</h1></center>
+	<center><h1>Experiment Results</h1></center>
 
-	<table align=center width=420px>
+	<table align=center width=820px>
 		<center>
 			<tr>
 				<td>
@@ -234,11 +254,20 @@
 			</tr>
 		</center>
 	</table>
-	<table align=center width=400px>
+	<table align=center width=800px>
 		<tr>
-			<td align=center width=400px>
+			<td align=center width=800px>
 				<center>
-					<td><img class="round" style="width:450px" src="./resources/method_diagram.png"/></td>
+					<td><img class="round" style="width:800px" src="./resources/babies_compare.png"/></td>
+				</center>
+			</td> 
+		</tr>
+	</table>
+	<table align=center width=800px>
+		<tr>
+			<td align=center width=800px>
+				<center>
+					<td><img class="round" style="width:800px" src="./resources/cats_compare.png"/></td>
 				</center>
 			</td>
 		</tr>
@@ -247,7 +276,9 @@
 		<center>
 			<tr>
 				<td>
-					Short description if wanted
+					<p style="text-align:justify; text-justify:inter-ideograph;"> Qualitative and quantitative comparison of 10-shot image generation with different FSIG methods. Images of each column are from the same noise input (Last row). 
+     				Left: 10 real target images for few-shot adaptation.
+     				Mid, Right: For target domain with close proximity (e.g., Babies, top), our method can generate high quality images with more refined details and diversity knowledge.
 				</td>
 			</tr>
 		</center>
@@ -255,7 +286,7 @@
 	<table align=center width=800px>
 		<br>
 		<tr><center>
-			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
+			<span style="font-size:28px">&nbsp;<a href='https://github.com/yunqing-me/FSIG-ImportanceProbing-KML'>[GitHub]</a>
 			</center>
 		</span>
 	</table>
