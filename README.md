@@ -1,5 +1,5 @@
 <h1 align='center' style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;">
-                Few-shot Image Generation via Adaptation-Aware Kernel Modulation</h1>
+                Few-shot Image Generation via Adaptation-Aware <br> Kernel Modulation</h1>
 <p align='center' style="text-align:center;font-size:1.25em;">
     <a href="https://yunqing-me.github.io/" target="_blank" style="text-decoration: none;">Yunqing Zhao</a>&nbsp;/&nbsp;
     <a href="https://miladabd.github.io/" target="_blank" style="text-decoration: none;">Milad Abdollahzadeh&nbsp</a>&nbsp;/&nbsp;
