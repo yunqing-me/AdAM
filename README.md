@@ -1,7 +1,13 @@
-# Few-shot Image Generation via Adaptation-Aware Kernel Modulation
+<h1 align='center' style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;">
+                Few-shot Image Generation via Adaptation-Aware Kernel Modulation</h1>
+<p align='center' style="text-align:center;font-size:1.25em;">
+    <a href="https://yunqing-me.github.io/" target="_blank" style="text-decoration: none;">Yunqing Zhao</a>&nbsp;/&nbsp;
+    <a href="https://miladabd.github.io/" target="_blank" style="text-decoration: none;">Milad Abdollahzadeh&nbsp</a>&nbsp;/&nbsp;
+    <a href="https://keshik6.github.io/" target="_blank" style="text-decoration: none;">Keshigeyan Chandrasegaran&nbsp</a>&nbsp;/&nbsp;
+    <a href="https://sites.google.com/site/mancheung0407/" target="_blank" style="text-decoration: none;">Ngai&#8209;Man&nbsp;Cheung</a></br>
+Singapore University of Technology and Design (SUTD)<br/>
+<em>The Thirty-Sixth Annual Conference on Neural Information Processing Systems (NeurIPS 2022);</br></em>
+</p>
 
-[Yunqing Zhao](https://yunqing-me.github.io/), [Milad Abdollahzadeh](https://miladabd.github.io/), [Chandrasegaran Keshigeyan](https://keshik6.github.io/), [Ngai-Man Cheung](https://istd.sutd.edu.sg/people/faculty/ngai-man-man-cheung)
 
-The Thirty-Sixth Annual Conference on Neural Information Processing Systems (NeurIPS 2022)
-
-## [Project Page](https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/)  |   [Paper]()
+## [Project Page](https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/)  |  [Paper]()
