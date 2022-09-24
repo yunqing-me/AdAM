@@ -10,12 +10,22 @@ Singapore University of Technology and Design (<b>SUTD</b>)<br/>
 
 <p align='center';>
 <b>
-<em>The Thirty-Sixth Annual Conference on Neural Information Processing Systems (NeurIPS 2022);</em>
+<em>The Thirty-Sixth Annual Conference on Neural Information Processing Systems (NeurIPS 2022);</em> <br>
+<em>Ernest N. Morial Convention Center, New Orleans, LA, USA.</em>
 </b>
 </p>
 
-## [Project Page](https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/)  |  [Paper]()
+<p align='center' style="text-align:center;font-size:2.5 em;">
+<b>
+    <a href="https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/" target="_blank" style="text-decoration: none;">Project Page</a>&nbsp;/&nbsp;
+    <a href="https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/" target="_blank" style="text-decoration: none;">Poster</a>&nbsp;/&nbsp;
+    <a href="https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;/&nbsp;
+    <a href="https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/" target="_blank" style="text-decoration: none;">Talk</a>&nbsp;
+</b>
+</p>
 
+
+----------------------------------------------------------------------
 
 #### TL, DR: 
 ```
