@@ -130,7 +130,7 @@ We note that, ideally Step 1. and Step 2. can be combined together. Here, for si
 
 ## Evaluate our method on more GAN architectures
 
-To evaluate the effectiveness of our method, we further provide the implementation of ProGAN. Please find the anonymous link: `https://drive.google.com/drive/folders/1aVfKnUIRKmFHODGeF4vvcNeMZC7H5E8A?usp=sharing`, which includs the Importance Probing and Adapataion implementations.
+To evaluate the effectiveness of our method, we further provide the implementation of ProGAN. Please find below: `https://drive.google.com/drive/folders/1aVfKnUIRKmFHODGeF4vvcNeMZC7H5E8A?usp=sharing`, which includs the Importance Probing and Adapataion implementations.
 
 ## Visualize the Important Kernels identified in Probing Stage.
 
