@@ -170,7 +170,7 @@ Follow Experiments part in this repo and you can produce your customized results
 ```
 @inproceedings{zhao2022fsig-ip,
   title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
-  author={Yunqing Zhao, Keshigeyan Chandrasegaran, Milad Abdollahzadeh, Ngai-Man Cheung},
+  author={Zhao, Yunqing and Chandrasegaran, Keshigeyan and Abdollahzadeh, Milad and Cheung, Ngai-Man},
   booktitle={Neurips},
   year={2022}
 }
