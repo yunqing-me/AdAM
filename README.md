@@ -17,10 +17,10 @@ Singapore University of Technology and Design (<b>SUTD</b>)<br/>
 
 <p align='center' style="text-align:center;font-size:2.5 em;">
 <b>
-    <a href="https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/" target="_blank" style="text-decoration: none;">Project Page</a>&nbsp;/&nbsp;
-    <a href="https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/" target="_blank" style="text-decoration: none;">Poster</a>&nbsp;/&nbsp;
-    <a href="https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;/&nbsp;
-    <a href="https://yunqing-me.github.io/FSIG-ImportanceProbing-KML/" target="_blank" style="text-decoration: none;">Talk</a>&nbsp;
+    <a href="https://yunqing-me.github.io/AdAM//" target="_blank" style="text-decoration: none;">Project Page</a>&nbsp;/&nbsp;
+    <a href="https://yunqing-me.github.io/AdAM/" target="_blank" style="text-decoration: none;">Poster</a>&nbsp;/&nbsp;
+    <a href="https://yunqing-me.github.io/AdAM/" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;/&nbsp;
+    <a href="https://yunqing-me.github.io/AdAM/" target="_blank" style="text-decoration: none;">Talk</a>&nbsp;
 </b>
 </p>
 
