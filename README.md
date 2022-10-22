@@ -20,7 +20,7 @@ Singapore University of Technology and Design (<b>SUTD</b>)<br/>
     <a href="https://yunqing-me.github.io/AdAM//" target="_blank" style="text-decoration: none;">Project Page</a>&nbsp;/&nbsp;
     <a href="https://yunqing-me.github.io/AdAM/" target="_blank" style="text-decoration: none;">Poster</a>&nbsp;/&nbsp;
     <a href="https://yunqing-me.github.io/AdAM/" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;/&nbsp;
-    <a href="https://yunqing-me.github.io/AdAM/" target="_blank" style="text-decoration: none;">Talk</a>&nbsp;
+    <a href="https://recorder-v3.slideslive.com/?share=74947&s=c88e53c5-a3c2-46c9-9719-092b74eca0c2" target="_blank" style="text-decoration: none;">Talk</a>&nbsp;
 </b>
 </p>
 
