@@ -168,11 +168,13 @@ Follow Experiments part in this repo and you can produce your customized results
 ## Bibtex
 
 ```
-@inproceedings{zhao2022fsig-ip,
-  title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
-  author={Zhao, Yunqing and Chandrasegaran, Keshigeyan and Abdollahzadeh, Milad and Cheung, Ngai-Man},
-  booktitle={Neurips},
-  year={2022}
+@inproceedings{
+zhao2022fewshot,
+title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
+author={Yunqing ZHAO and Keshigeyan Chandrasegaran and Milad Abdollahzadeh and Ngai-man Cheung},
+booktitle={Thirty-Sixth Conference on Neural Information Processing Systems},
+year={2022},
+url={https://openreview.net/forum?id=Z5SE9PiAO4t}
 }
 ```
 
