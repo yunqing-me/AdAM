@@ -8,7 +8,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 from torch.autograd import Function
-
+import torchvision
 
 from model import Discriminator
 from torchvision import transforms
@@ -23,20 +23,52 @@ from scipy import linalg
 from calc_inception import load_patched_inception_v3
 from tqdm import tqdm
 
+import lpips
 
-class CustomDataset(Dataset):
-    def __init__(self, dir_path, transform=None, num_samples=None):
-        super(CustomDataset, self).__init__()
+# Keep penultimate features as global varialble such that hook modifies these features
+penultimate_fts = None
+
+
+def get_penultimate_fts(self, input, output):
+    global penultimate_fts
+    #print(input)
+    penultimate_fts = output
+    return None
+
+
+def get_lpips_net():
+    device = "cuda:0"
+
+    # LPIPS model
+    percept = lpips.PerceptualLoss(
+        model="net-lin", net="alex", use_gpu=device.startswith("cuda")
+    )
+
+    print(percept)
+    return percept.model.net
+
+
+class CustomDataset_LPIPS(Dataset):
+    def __init__(self, dir_path, transform=None, num_samples=None, repeat=False):
+        super(CustomDataset_LPIPS, self).__init__()
         self.dir_path = dir_path
         self.all_image_paths = [os.path.join(self.dir_path, i) for i in os.listdir(self.dir_path)][:num_samples]
+
+        if repeat:
+            self.all_image_paths = self.all_image_paths*2
+
         self.transform = transform
 
 
     def __getitem__(self, idx):
         img_path = self.all_image_paths[idx]
-        img = PIL.Image.open(img_path).convert('RGB')
+        #img = PIL.Image.open(img_path).convert('RGB')
 
-        if transforms is not None:
+        img = lpips.load_image(img_path)
+        img = lpips.im2tensor(img)
+        #print(img.size())
+
+        if self.transform is not None:
             return self.transform(img)
 
         return img
@@ -46,18 +78,18 @@ class CustomDataset(Dataset):
         return len(self.all_image_paths)
 
 
-
 def create_image_dataloader(path, num_samples):
-    normalize = transforms.Normalize(mean=[0.5, 0.5, 0.5],
-                                     std=[0.5, 0.5, 0.5])
+
+    # LPIPS trained with 64 x 64 patches, therefore resize appropriately
+    # If even repeated with different sizes, the results have similar trends.
     transform = transforms.Compose([
-            #transforms.Resize(299, interpolation=transforms.InterpolationMode.BILINEAR),
-            transforms.CenterCrop(299), # Use CenterCrop / Similar trend obtained even if resized + crop
-            transforms.ToTensor(),
-            normalize,
+            transforms.Resize(128, interpolation=transforms.InterpolationMode.BILINEAR),
+            transforms.CenterCrop(64), # Use CenterCrop / Similar trend obtained even if resized + crop
+            #transforms.ToTensor(),
+            #normalize,
         ])
 
-    ds = CustomDataset(path, transform, num_samples)
+    ds = CustomDataset_LPIPS(path, transform, num_samples)
     loader = torch.utils.data.DataLoader(
         ds,
         batch_size=128, shuffle=False,
@@ -67,24 +99,33 @@ def create_image_dataloader(path, num_samples):
 
 
 
-def extract_embeddings(inception, dl):
+def extract_embeddings(lpips_model, dl):
+    global penultimate_fts
+    lpips_model.eval()
+    lpips_model.features[12].register_forward_hook(get_penultimate_fts)
+
     all_embeddings = None
 
     with tqdm(len(dl)) as pbar:
         for batch_idx, x in enumerate(dl):
             x = x.cuda()
+            penultimate_fts = None
 
             # =================== extract penultimate layer features =======================
             # Register hook to avg pool layer
             with torch.no_grad():
-                fts = inception(x)[0].squeeze()
+                #print(x.size())
+                output = lpips_model(x)
+                penultimate_fts = penultimate_fts.view(penultimate_fts.size(0), -1)
+                #print(penultimate_fts.size())
+                assert torch.is_tensor(penultimate_fts)
 
                 if all_embeddings is None:
-                    all_embeddings = fts.detach().cpu()
+                    all_embeddings = penultimate_fts.detach().cpu()
                 else:
-                    all_embeddings = torch.cat((all_embeddings, fts.detach().cpu()), 0)
+                    all_embeddings = torch.cat( (all_embeddings, penultimate_fts.detach().cpu() ), 0)
                 
-            pbar.set_description("current extract: ({}, {}) | total extract: ({}, {})".format( fts.size(0), fts.size(1),
+            pbar.set_description("current extract: ({}, {}) | total extract: ({}, {})".format( penultimate_fts.size(0), penultimate_fts.size(1),
                              all_embeddings.size(0), all_embeddings.size(1) ) )
             pbar.update(1)
 
@@ -92,13 +133,13 @@ def extract_embeddings(inception, dl):
 
 
 def save_embeddings_as_pt(features, name):
-    dir_name = 'embeddings_inception'
+    dir_name = 'embeddings_lpips'
     os.makedirs(dir_name, exist_ok=True)
     torch.save(features, os.path.join(dir_name, '{}.pt'.format(name)) ) 
 
 
 def load_embeddings(name):
-    embeddings = torch.load('embeddings_inception/{}.pt'.format(name))
+    embeddings = torch.load('embeddings_lpips/{}.pt'.format(name))
     print("Loaded {} embeddings with size = {} ".format(name, embeddings.size()))
     return embeddings
 
@@ -128,14 +169,16 @@ def main(dataset_name, num_samples=None):
 
 
     device = "cuda:0"
-    inception = nn.DataParallel(load_patched_inception_v3()).to(device)
-    inception.eval()
+    #lpips_model = get_lpips_net()
+    lpips_model = torchvision.models.alexnet(pretrained=True).to(device)
+    lpips_model.eval()
 
     # Extract ffhq embeddings
     dl = create_image_dataloader(dataset_paths[dataset_name], num_samples)
-    ffhq_embeddings = extract_embeddings(inception, dl)
+    ffhq_embeddings = extract_embeddings(lpips_model, dl)
     save_embeddings_as_pt(ffhq_embeddings, dataset_name)
     ffhq_embeddings = load_embeddings(dataset_name)
+
 
 
 if __name__ == '__main__':
