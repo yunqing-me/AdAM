@@ -29,10 +29,11 @@ Singapore University of Technology and Design (<b>SUTD</b>)<br/>
 
 #### TL, DR: 
 ```
-In this research, the proposed method aims to identify kernels in source GAN important for few-shot target adaptation and protect them from distortion. 
+In this research, we propose Adaptation-Aware Kernel Modulation (AdAM) for few-shot image generation, that aims to identify kernels in source GAN important for target adaptation. 
 
-After this Importance Probing stage, the model can then perform few-shot adaptation using very few samples from target domains with different proximity.
+The model can perform GAN adaptation using very few samples from target domains with different proximity to the source.
 ```
+#### Code will be available soon
 
 ## Installation and Environment:
 
@@ -113,7 +114,7 @@ We can obtain the estimated Fisher information of modulated kernels and it will 
 
 10-shot Target Images, Estimated Fisher Information and Weights can be found [Here](https://drive.google.com/drive/folders/1cLA134v7aOOt6lh_faqd6WoqOyCx1Etk?usp=sharing)
 
-## Step 2.  Adaptation-aware Kernel Modulation for Few-shot Image generation (FSIG)
+## Step 2.  Adaptation-aware Kernel Modulation (AdAM) for Few-shot Image generation
 
 ~~~bash
  # The adaptation process is also computational efficient, it will lasts ~65mins for Babies and ~110 mins for AFHQ-Cat.
@@ -180,7 +181,7 @@ url={https://openreview.net/forum?id=Z5SE9PiAO4t}
 
 ## Acknowledgement: 
 
-We appriciate the wonderful base implementation of StyleGAN V2 implementation from [@rosinality](https://github.com/rosinality). We also thank  [@mseitzer](https://github.com/mseitzer/pytorch-fid), [@Ojha](https://github.com/utkarshojha/few-shot-gan-adaptation) and [@richzhang](https://github.com/richzhang/PerceptualSimilarity) for their implementations on FID score and intra-LPIPS.
+We appriciate the wonderful base implementation of StyleGAN V2 implementation from [@rosinality](https://github.com/rosinality). We thank  [@mseitzer](https://github.com/mseitzer/pytorch-fid), [@Ojha](https://github.com/utkarshojha/few-shot-gan-adaptation) and [@richzhang](https://github.com/richzhang/PerceptualSimilarity) for their implementations on FID score and intra-LPIPS.
 
 We also thank for the useful training and evaluation tool used in this work, from [@Miaoyun](https://github.com/MiaoyunZhao/GANmemory_LifelongLearning).
 
