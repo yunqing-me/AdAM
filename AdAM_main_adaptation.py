@@ -620,12 +620,12 @@ if __name__ == "__main__":
         print("Basic setups:", '\n', args)
 
     # reset directory
-    args.output_path    = os.path.join('../_output_style_gan/', args.exp)
-    args.sample_dir     = os.path.join('../_output_style_gan/', args.exp, 'samples')
-    args.checkpoint_dir = os.path.join('../_output_style_gan/', args.exp, 'checkpoints')
+    args.output_path    = os.path.join('./_output_style_gan/', args.exp)
+    args.sample_dir     = os.path.join('./_output_style_gan/', args.exp, 'samples')
+    args.checkpoint_dir = os.path.join('./_output_style_gan/', args.exp, 'checkpoints')
 
     # # for intermediate images in calculating intra-lpips
-    # args.intra_lpips_path = os.path.join('../_output_intra_lpips/', args.exp)
+    # args.intra_lpips_path = os.path.join('./_output_intra_lpips/', args.exp)
     # if not os.path.exists(args.intra_lpips_path):
     #     os.makedirs(args.intra_lpips_path, exist_ok=True)
 
@@ -655,8 +655,8 @@ if __name__ == "__main__":
     )
     
     # define datasets and loaders
-    data_path_train = os.path.join('../_processed_train', args.data_path) # only for 10-shot
-    data_path_test  = os.path.join('../_processed_test', args.data_path)
+    data_path_train = os.path.join('./_processed_train', args.data_path) # only for 10-shot
+    data_path_test  = os.path.join('./_processed_test', args.data_path)
         
     if args.n_sample_train == 10:
         train_dataset   = MultiResolutionDataset(data_path_train, transform, args.size)
@@ -703,8 +703,8 @@ if __name__ == "__main__":
     shutil.copy(str(my_file), str(to_file))
 
     # Step 2. Obtain the statistics of FIM        
-    filter_fisher_g= torch.load(os.path.join(f'../_output_style_gan/_low_rank_probing_{args.source_key}-{args.data_path}', "./checkpoints/filter_fisher_g.pt"))
-    filter_fisher_d= torch.load(os.path.join(f'../_output_style_gan/_low_rank_probing_{args.source_key}-{args.data_path}', "./checkpoints/filter_fisher_d.pt"))
+    filter_fisher_g= torch.load(os.path.join(f'./_output_style_gan/_low_rank_probing_{args.source_key}-{args.data_path}', "./checkpoints/filter_fisher_g.pt"))
+    filter_fisher_d= torch.load(os.path.join(f'./_output_style_gan/_low_rank_probing_{args.source_key}-{args.data_path}', "./checkpoints/filter_fisher_d.pt"))
     
     # Step 3. Obtain the quantile values for FC and Conv Layers
     # G: Conv
@@ -825,7 +825,7 @@ if __name__ == "__main__":
     g_dict = generator.state_dict()
     d_dict = discriminator.state_dict()
     if args.ckpt_source is not None:
-        ckpt_source_path = os.path.join("../_pretrained/", args.ckpt_source)
+        ckpt_source_path = os.path.join("./_pretrained/", args.ckpt_source)
         print("load model:", args.ckpt_source)
         assert args.source_key in args.ckpt_source
         ckpt_source = torch.load(ckpt_source_path, map_location=lambda storage, loc: storage)

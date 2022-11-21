@@ -193,7 +193,7 @@ def calculate_fisher(args, train_loader, generator, discriminator, g_optim, d_op
             print("entering evaluation of fisher information...")
             for j in tqdm(range(args.num_batch_fisher)):  # for each iteration, we read 4 noise input but calculate FIM one-by-one
                 # 0) load a batch of noise and real image, and compute FIM image by image
-                noise_fisher    = torch.load(f'../_noise/{str(j).zfill(4)}.pt').cuda()
+                noise_fisher    = torch.load(f'./_noise/{str(j).zfill(4)}.pt').cuda()
                 real_img_fisher = next(train_loader).to(device)
 
                 for fisher_idx in range((noise_fisher.size()[0])):
@@ -462,8 +462,8 @@ if __name__ == "__main__":
     if get_rank() == 0:
         print("Basic setups:", '\n', args)
 
-    args.output_path    = os.path.join('../_output_style_gan/', args.exp)
-    args.checkpoint_dir = os.path.join('../_output_style_gan/', args.exp, 'checkpoints')
+    args.output_path    = os.path.join('./_output_style_gan/', args.exp)
+    args.checkpoint_dir = os.path.join('./_output_style_gan/', args.exp, 'checkpoints')
 
     # Create missing directories
     if not os.path.exists(args.output_path):
@@ -486,7 +486,7 @@ if __name__ == "__main__":
     g_dict = generator.state_dict()
     d_dict = discriminator.state_dict()
     if args.ckpt_source is not None:
-        ckpt_source_path = os.path.join("../_pretrained/", args.ckpt_source)
+        ckpt_source_path = os.path.join("./_pretrained/", args.ckpt_source)
         print("load model:", args.ckpt_source)
         assert args.source_key in args.ckpt_source
         ckpt_source = torch.load(ckpt_source_path, map_location=lambda storage, loc: storage)
@@ -560,8 +560,8 @@ if __name__ == "__main__":
     )
 
     # define datasets and loaders
-    data_path_train = os.path.join('../_processed_train', args.data_path) # only for 10-shot
-    data_path_test   = os.path.join('../_processed_test', args.data_path)
+    data_path_train = os.path.join('./_processed_train', args.data_path) # only for 10-shot
+    data_path_test   = os.path.join('./_processed_test', args.data_path)
 
     if args.n_sample_train <= 10:
         train_dataset   = MultiResolutionDataset(data_path_train, transform, args.size)

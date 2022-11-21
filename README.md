@@ -73,7 +73,7 @@ For example, download the 10-shot target set, `Babies` ([Link](https://drive.goo
 
 Then, transform to lmdb format:
 
-`python prepare_data.py --input_path [your_data_path_of_{babies/afhq_cat}] --output_path [your_lmdb_data_path_of_{babies/afhq_cat}]`
+`python prepare_data.py --input_path [your_data_path_of_{babies/afhq_cat}] --output_path ./_processed_train/[your_lmdb_data_path_of_{babies/afhq_cat}]`
 
 ### Step 2. 
 Prepare the entire target dataset for evaluation
@@ -91,10 +91,13 @@ entire-{babies/afhq_cat}
 
 Then, transform to lmdb format for evaluation
 
-`python prepare_data.py --input_path [your_data_path_of_entire_{babies/afhq_cat}] --output_path [your_lmdb_data_path_of_entire_{babies/afhq_cat}]`
+`python prepare_data.py --input_path [your_data_path_of_entire_{babies/afhq_cat}] --output_path ./_processed_test/[your_lmdb_data_path_of_entire_{babies/afhq_cat}]`
 
 ### Step 3. 
 Download the GAN model pretrained on FFHQ from [here](https://drive.google.com/file/d/1TQ_6x74RPQf03mSjtqUijM4MZEMyn7HI/view). Then, save it to `./_pretrained/style_gan_source_ffhq.pt`.
+
+### Step 4.
+Randomly generate abundant Gaussian noise input (the same dimension as input to the generator) for Importance Probing, save them to `./_noise/`
 
 # Experiments
 
