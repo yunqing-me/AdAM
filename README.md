@@ -78,7 +78,7 @@ Then, transform to lmdb format:
 ### Step 2. 
 Prepare the entire target dataset for evaluation
 
-For example, download the entire dataset, `Babies`([Link](https://drive.google.com/file/d/1JmjKBq_wylJmpCQ2OWNMy211NFJhHHID/view?usp=sharing)) and `AFHQ-Cat`([Link](https://github.com/clovaai/stargan-v2/blob/master/README.md#animal-faces-hq-dataset-afhq)), and organize your directory as follows:
+For example, download the entire dataset, `Babies`([Link](https://drive.google.com/file/d/1xBpBRmPRoVXsWerv_zx4kQ4nDQUOsqu_/view?usp=share_link)) and `AFHQ-Cat`([Link](https://drive.google.com/file/d/1_-cDkzqz3LlotXSYMBXZLterSQe4fR7S/view?usp=share_link)), and organize your directory as follows:
 
 ~~~
 entire-{babies/afhq_cat}
@@ -96,48 +96,35 @@ Then, transform to lmdb format for evaluation
 ### Step 3. 
 Download the GAN model pretrained on FFHQ from [here](https://drive.google.com/file/d/1TQ_6x74RPQf03mSjtqUijM4MZEMyn7HI/view). Then, save it to `./_pretrained/style_gan_source_ffhq.pt`.
 
-## Experiments
+# Experiments
 
 ## Training & Evaluation: 
 
 ### Step 1. Adaptation-aware Importance Probing (IP) to indentify important kernels for target domain
 
 ~~~bash
-# The probing process is lightweight and will only consume ~8mins
-CUDA_VISIBLE_DEVICES=7 python _low_rank_probing.py \
- --exp _low_rank_probing_ffhq-{babies/afhq_cat}_10 --data_path {babies/afhq_cat} --n_sample_train 10 \
- --fisher_iter 500 --fisher_freq 500 --num_batch_fisher 250 --source_key ffhq --ckpt_source style_gan_source_ffhq.pt \
- --wandb --wandb_project_name test_probing-ffhq-{babies/afhq_cat} --wandb_run_name EstFisher 
+bash _bash_importance_probing.sh
 ~~~
 
 We can obtain the estimated Fisher information of modulated kernels and it will be saved in `./_output_style_gan/args.exp/checkpoints/filter_fisher_g.pt` and `./_output_style_gan/args.exp/checkpoints/filter_fisher_d.pt`
 
-10-shot Target Images, Estimated Fisher Information and Weights can be found [Here](https://drive.google.com/drive/folders/1cLA134v7aOOt6lh_faqd6WoqOyCx1Etk?usp=sharing)
+10-shot Target Images, Entire datasets and Estimated Fisher Information and Weights can be found [Here](https://drive.google.com/drive/folders/1lrQ3hUGYy5ZQHDTWk1dFTYuDRD-SFnb9?usp=share_link)
 
 ## Step 2.  Adaptation-aware Kernel Modulation (AdAM) for Few-shot Image generation
 
 ~~~bash
- # The adaptation process is also computational efficient, it will lasts ~65mins for Babies and ~110 mins for AFHQ-Cat.
- CUDA_VISIBLE_DEVICES=7 python train_filter_kml.py \
-  --exp filter_kml_ffhq-{babies/afhq_cat}_10 --data_path {babies/afhq_cat} --n_sample_train 10 \
-  --eval_in_training --eval_in_training_freq 100 --iter {1500/3000} \
-  --wandb --wandb_project_name filter_kml-{babies/afhq_cat} --wandb_run_name filter_kml --batch 4 --n_sample_test 5000 \
-  --store_samples --samples_freq 100 \ # this can generate intermediate images during training
+# you can tune hyperparameters here
+bash _bash_main_adaptation.sh
 ~~~
 
 Training dynamics and evaluation results will be shown on [`wandb`](https://wandb.ai/site)
 
 We note that, ideally Step 1. and Step 2. can be combined together. Here, for simplicity we use two steps as demonstration.
 
-## Evaluate our method on more GAN architectures
+## Evaluate Intra-LPIPS:
+Use Babies and AFHQ-Cat as example: download images from [here](https://drive.google.com/file/d/1JQDEV_I2wIULqjIp6ms1hpsGgUYZKTgG/view?usp=share_link), then move the unzipped folder into `./cluster_center`, then refer to `Evaluator` in `AdAM_main_adaptation.py`.
 
-To evaluate the effectiveness of our method, we further provide the implementation of ProGAN. Please find below: `https://drive.google.com/drive/folders/1aVfKnUIRKmFHODGeF4vvcNeMZC7H5E8A?usp=sharing`, which includs the Importance Probing and Adapataion implementations.
-
-## Visualize the Important Kernels identified in Probing Stage.
-
-We use the official implementation (`https://github.com/CSAILVision/GANDissect`) to visualize the important kernels via GAN dissection. Please check the supplementary for more details.
-
-## Training your own GAN !
+# Train your own GAN !
 
 We provide all 10-shot target images and models used in our main paper and Supplementary. You can also adapt to other images determined by you.
 
@@ -167,13 +154,15 @@ Target Samples: [Link](https://drive.google.com/drive/folders/10skBzKjr8jJbWvTXK
 Follow Experiments part in this repo and you can produce your customized results.
 
 ## Bibtex
+If you find this project useful in your research, please consider citing our paper:
 
 ```
 @inproceedings{
 zhao2022fewshot,
 title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
 author={Yunqing ZHAO and Keshigeyan Chandrasegaran and Milad Abdollahzadeh and Ngai-man Cheung},
-booktitle={Thirty-Sixth Conference on Neural Information Processing Systems},
+booktitle={Advances in Neural Information Processing Systems},
+editor={Alice H. Oh and Alekh Agarwal and Danielle Belgrave and Kyunghyun Cho},
 year={2022},
 url={https://openreview.net/forum?id=Z5SE9PiAO4t}
 }
@@ -181,7 +170,7 @@ url={https://openreview.net/forum?id=Z5SE9PiAO4t}
 
 ## Acknowledgement: 
 
-We appriciate the wonderful base implementation of StyleGAN V2 implementation from [@rosinality](https://github.com/rosinality). We thank  [@mseitzer](https://github.com/mseitzer/pytorch-fid), [@Ojha](https://github.com/utkarshojha/few-shot-gan-adaptation) and [@richzhang](https://github.com/richzhang/PerceptualSimilarity) for their implementations on FID score and intra-LPIPS.
+We appreciate the wonderful base implementation of StyleGAN-V2 from [@rosinality](https://github.com/rosinality). We thank [@mseitzer](https://github.com/mseitzer/pytorch-fid), [@Ojha](https://github.com/utkarshojha/few-shot-gan-adaptation) and [@richzhang](https://github.com/richzhang/PerceptualSimilarity) for their implementations on FID score and intra-LPIPS.
 
 We also thank for the useful training and evaluation tool used in this work, from [@Miaoyun](https://github.com/MiaoyunZhao/GANmemory_LifelongLearning).
 
