@@ -100,7 +100,6 @@ Randomly generate abundant Gaussian noise input (the same dimension as input to 
 
 # Experiments
 
-## Training & Evaluation: 
 
 ## Step 1. Importance Probing (IP) to indentify important kernels for target adaptation
 
