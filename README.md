@@ -33,7 +33,6 @@ In this research, we propose Adaptation-Aware Kernel Modulation (AdAM) for few-s
 
 The model can perform GAN adaptation using very few samples from target domains with different proximity to the source.
 ```
-#### Code will be available soon
 
 ## Installation and Environment:
 
@@ -97,13 +96,13 @@ Then, transform to lmdb format for evaluation
 Download the GAN model pretrained on FFHQ from [here](https://drive.google.com/file/d/1TQ_6x74RPQf03mSjtqUijM4MZEMyn7HI/view). Then, save it to `./_pretrained/style_gan_source_ffhq.pt`.
 
 ### Step 4.
-Randomly generate abundant Gaussian noise input (the same dimension as input to the generator) for Importance Probing, save them to `./_noise/`
+Randomly generate abundant Gaussian noise input (the same dimension as input to the generator) for Importance Probing, save them to `./_noise/`.
 
 # Experiments
 
 ## Training & Evaluation: 
 
-### Step 1. Adaptation-aware Importance Probing (IP) to indentify important kernels for target domain
+## Step 1. Importance Probing (IP) to indentify important kernels for target adaptation
 
 ~~~bash
 bash _bash_importance_probing.sh
@@ -111,9 +110,7 @@ bash _bash_importance_probing.sh
 
 We can obtain the estimated Fisher information of modulated kernels and it will be saved in `./_output_style_gan/args.exp/checkpoints/filter_fisher_g.pt` and `./_output_style_gan/args.exp/checkpoints/filter_fisher_d.pt`
 
-10-shot Target Images, Entire datasets and Estimated Fisher Information and Weights can be found [Here](https://drive.google.com/drive/folders/1lrQ3hUGYy5ZQHDTWk1dFTYuDRD-SFnb9?usp=share_link)
-
-## Step 2.  Adaptation-aware Kernel Modulation (AdAM) for Few-shot Image generation
+## Step 2.  Adaptation-aware Kernel Modulation (AdAM) for Few-shot Image Generation
 
 ~~~bash
 # you can tune hyperparameters here
@@ -124,12 +121,16 @@ Training dynamics and evaluation results will be shown on [`wandb`](https://wand
 
 We note that, ideally Step 1. and Step 2. can be combined together. Here, for simplicity we use two steps as demonstration.
 
-## Evaluate Intra-LPIPS:
+### Evaluation of Intra-LPIPS:
 Use Babies and AFHQ-Cat as example: download images from [here](https://drive.google.com/file/d/1JQDEV_I2wIULqjIp6ms1hpsGgUYZKTgG/view?usp=share_link), then move the unzipped folder into `./cluster_center`, then refer to `Evaluator` in `AdAM_main_adaptation.py`.
 
-# Train your own GAN !
+# Data Repository
+The estimated fisher information (i.e., the output of Importance Probing) and Weights (i.e., the output of the main adaptation corresponding to Figure 4 in the main paper) can be found [Here](https://drive.google.com/drive/folders/11uZjqJZl7ImapEndU4locAr2miHCJvDY?usp=share_link).
 
-We provide all 10-shot target images and models used in our main paper and Supplementary. You can also adapt to other images determined by you.
+
+## Train your own GAN !
+
+We provide all 10-shot target images and models used in our main paper and Supplementary. You can also adapt to other images selected by yourself.
 
 Source GAN:
 - [FFHQ](https://drive.google.com/file/d/1TQ_6x74RPQf03mSjtqUijM4MZEMyn7HI/view)
@@ -154,9 +155,9 @@ Target Samples: [Link](https://drive.google.com/drive/folders/10skBzKjr8jJbWvTXK
 - Wrecked cars
 - ...
 
-Follow Experiments part in this repo and you can produce your customized results.
+Follow the experiment part in this repo and you can produce your customized results.
 
-## Bibtex
+# Bibtex
 If you find this project useful in your research, please consider citing our paper:
 
 ```
@@ -171,7 +172,7 @@ url={https://openreview.net/forum?id=Z5SE9PiAO4t}
 }
 ```
 
-## Acknowledgement: 
+# Acknowledgement: 
 
 We appreciate the wonderful base implementation of StyleGAN-V2 from [@rosinality](https://github.com/rosinality). We thank [@mseitzer](https://github.com/mseitzer/pytorch-fid), [@Ojha](https://github.com/utkarshojha/few-shot-gan-adaptation) and [@richzhang](https://github.com/richzhang/PerceptualSimilarity) for their implementations on FID score and intra-LPIPS.
 
