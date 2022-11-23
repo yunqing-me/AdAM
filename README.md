@@ -163,7 +163,7 @@ If you find this project useful in your research, please consider citing our pap
 @inproceedings{
 zhao2022fewshot,
 title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
-author={Yunqing ZHAO and Keshigeyan Chandrasegaran and Milad Abdollahzadeh and Ngai-man Cheung},
+author={Yunqing Zhao and Keshigeyan Chandrasegaran and Milad Abdollahzadeh and Ngai-man Cheung},
 booktitle={Advances in Neural Information Processing Systems},
 editor={Alice H. Oh and Alekh Agarwal and Danielle Belgrave and Kyunghyun Cho},
 year={2022},
