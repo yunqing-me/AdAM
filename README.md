@@ -19,8 +19,9 @@ Singapore University of Technology and Design (<b>SUTD</b>)<br/>
 <b>
     <a href="https://yunqing-me.github.io/AdAM//" target="_blank" style="text-decoration: none;">Project Page</a>&nbsp;/&nbsp;
     <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/d0ac1ed0c5cb9ecbca3d2496ec1ad984.png" target="_blank" style="text-decoration: none;">Poster</a>&nbsp;/&nbsp;
-    <a href="https://openreview.net/forum?id=Z5SE9PiAO4t" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;/&nbsp;
-    <a href="https://recorder-v3.slideslive.com/?share=74947&s=c88e53c5-a3c2-46c9-9719-092b74eca0c2" target="_blank" style="text-decoration: none;">Talk</a>&nbsp;
+    <a href="https://openreview.net/forum?id=Z5SE9PiAO4t" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;
+    <!-- /&nbsp; -->
+    <!-- <a href="https://recorder-v3.slideslive.com/?share=74947&s=c88e53c5-a3c2-46c9-9719-092b74eca0c2" target="_blank" style="text-decoration: none;">Talk</a>&nbsp; -->
 </b>
 </p>
 
@@ -109,7 +110,7 @@ bash _bash_importance_probing.sh
 
 We can obtain the estimated Fisher information of modulated kernels and it will be saved in `./_output_style_gan/args.exp/checkpoints/filter_fisher_g.pt` and `./_output_style_gan/args.exp/checkpoints/filter_fisher_d.pt`
 
-## Step 2.  Adaptation-aware Kernel Modulation (AdAM) for Few-shot Image Generation
+## Step 2.  Adaptation-Aware Kernel Modulation (AdAM) for Few-shot Image Generation
 
 ~~~bash
 # you can tune hyperparameters here
