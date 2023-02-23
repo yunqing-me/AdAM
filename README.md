@@ -19,6 +19,7 @@ Singapore University of Technology and Design (<b>SUTD</b>)<br/>
 <b>
     <a href="https://yunqing-me.github.io/AdAM//" target="_blank" style="text-decoration: none;">Project Page</a>&nbsp;/&nbsp;
     <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/d0ac1ed0c5cb9ecbca3d2496ec1ad984.png" target="_blank" style="text-decoration: none;">Poster</a>&nbsp;/&nbsp;
+    <a href="https://drive.google.com/file/d/1hNSIlu0zhjGvqq-gG928jIICCCxuhFHz/view?usp=share_link" target="_blank" style="text-decoration: none;">Slides</a>&nbsp;/&nbsp;
     <a href="https://arxiv.org/abs/2210.16559" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;
     <!-- /&nbsp; -->
     <!-- <a href="https://recorder-v3.slideslive.com/?share=74947&s=c88e53c5-a3c2-46c9-9719-092b74eca0c2" target="_blank" style="text-decoration: none;">Talk</a>&nbsp; -->
