@@ -1,9 +1,9 @@
 <h1 align='center' style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;">
                 Few-shot Image Generation via Adaptation-Aware <br> Kernel Modulation</h1>
 <p align='center' style="text-align:center;font-size:1.25em;">
-    <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en" target="_blank" style="text-decoration: none;">Yunqing Zhao*</a>&nbsp;/&nbsp;
-    <a href="https://keshik6.github.io/" target="_blank" style="text-decoration: none;">Keshigeyan Chandrasegaran*</a>&nbsp;/&nbsp;
-    <a href="https://miladabd.github.io/" target="_blank" style="text-decoration: none;">Milad Abdollahzadeh*</a>&nbsp;/&nbsp;
+    <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en" target="_blank" style="text-decoration: none;">Yunqing Zhao</a>&nbsp;/&nbsp;
+    <a href="https://keshik6.github.io/" target="_blank" style="text-decoration: none;">Keshigeyan Chandrasegaran</a>&nbsp;/&nbsp;
+    <a href="https://miladabd.github.io/" target="_blank" style="text-decoration: none;">Milad Abdollahzadeh</a>&nbsp;/&nbsp;
     <a href="https://sites.google.com/site/mancheung0407/" target="_blank" style="text-decoration: none;">Ngai&#8209;Man Cheung</a></br>
 Singapore University of Technology and Design (<b>SUTD</b>)<br/>
 </p>
@@ -17,7 +17,7 @@ Singapore University of Technology and Design (<b>SUTD</b>)<br/>
 
 <p align='center' style="text-align:center;font-size:2.5 em;">
 <b>
-    <a href="https://yunqing-me.github.io/AdAM//" target="_blank" style="text-decoration: none;">Project Page</a>&nbsp;/&nbsp;
+    <a href="https://yunqing-me.github.io/AdAM/" target="_blank" style="text-decoration: none;">Project Page</a>&nbsp;/&nbsp;
     <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/d0ac1ed0c5cb9ecbca3d2496ec1ad984.png" target="_blank" style="text-decoration: none;">Poster</a>&nbsp;/&nbsp;
     <a href="https://drive.google.com/file/d/1hNSIlu0zhjGvqq-gG928jIICCCxuhFHz/view?usp=share_link" target="_blank" style="text-decoration: none;">Slides</a>&nbsp;/&nbsp;
     <a href="https://arxiv.org/abs/2210.16559" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;
