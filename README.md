@@ -1,5 +1,5 @@
 <h1 align='center' style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;">
-                Few-shot Image Generation via Adaptation-Aware <br> Kernel Modulation</h1>
+                Few-shot Image Generation via <br> Adaptation-Aware Kernel Modulation</h1>
 <p align='center' style="text-align:center;font-size:1.25em;">
     <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en" target="_blank" style="text-decoration: none;">Yunqing Zhao</a>&nbsp;/&nbsp;
     <a href="https://keshik6.github.io/" target="_blank" style="text-decoration: none;">Keshigeyan Chandrasegaran</a>&nbsp;/&nbsp;
@@ -39,13 +39,18 @@ The model can perform GAN adaptation using very few samples from target domains 
 ## Installation and Environment:
 
 - Platform: Linux
-- Tesla V100 GPUs with CuDNN 10.1
+- Tesla V100 GPUs / (or A100 GPUs)
 - PyTorch 1.7.0
 - Python 3.6.9
 - lmdb, tqdm
 
-Alternatively, you can install all libiraries through:  `pip install -r requirements.txt`
-
+Alternatively, A suitable conda environment named `adam` can be created and activated with:
+```
+git clone https://github.com/yunqing-me/AdAM.git
+conda env create -f environment.yaml
+conda activate adam
+cd AdAM
+```
 ## Analysis of Source ↦ Target distance
 
 We analyze the Source ↦ Target domain relation in the Sec. 3 (and Supplementary). See below for related steps in this analysis.
@@ -98,7 +103,11 @@ Then, transform to lmdb format for evaluation
 Download the GAN model pretrained on FFHQ from [here](https://drive.google.com/file/d/1TQ_6x74RPQf03mSjtqUijM4MZEMyn7HI/view). Then, save it to `./_pretrained/style_gan_source_ffhq.pt`.
 
 ### Step 4.
-Randomly generate abundant Gaussian noise input (the same dimension as input to the generator) for Importance Probing, save them to `./_noise/`.
+Randomly generate Gaussian noise input (the same dimension as input to the generator) for Importance Probing, save them to `./_noise/`:
+
+~~~
+python noise_generation.py
+~~~
 
 # Experiments
 

@@ -4,7 +4,6 @@ import math
 import random
 import os
 import numpy as np
-# os.environ["CUDA_VISIBLE_DEVICES"]="6"
 import torch
 from torch import nn, autograd, optim
 from torch.nn import functional as F
@@ -178,7 +177,7 @@ def calculate_fisher(args, train_loader, generator, discriminator, g_optim, d_op
         # --------------- --------------- ----------------- #
         # --------------- estimate fisher ----------------- #
 
-        if (i % args.fisher_freq == 0):      
+        if (i % args.fisher_freq == 0) and i>0:      
             requires_grad(g_ema, True)
             requires_grad(d_ema, True)
             g_ema.eval()
