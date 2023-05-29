@@ -171,14 +171,23 @@ Follow the experiment part in this repo and you can produce your customized resu
 If you find this project useful in your research, please consider citing our paper:
 
 ```
-@inproceedings{
-zhao2022fewshot,
-title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
-author={Yunqing Zhao and Keshigeyan Chandrasegaran and Milad Abdollahzadeh and Ngai-man Cheung},
-booktitle={Advances in Neural Information Processing Systems},
-editor={Alice H. Oh and Alekh Agarwal and Danielle Belgrave and Kyunghyun Cho},
-year={2022},
-url={https://openreview.net/forum?id=Z5SE9PiAO4t}
+@inproceedings{zhao2022fewshot,
+    title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
+    author={Yunqing Zhao and Keshigeyan Chandrasegaran and Milad Abdollahzadeh and Ngai-man Cheung},
+    booktitle={Advances in Neural Information Processing Systems},
+    editor={Alice H. Oh and Alekh Agarwal and Danielle Belgrave and Kyunghyun Cho},
+    year={2022},
+    url={https://openreview.net/forum?id=Z5SE9PiAO4t}
+}
+```
+Meanwhile, we also demonstrate a relevant research that aims to identify and Remove InCompatible Knowledge ([RICK](https://github.com/yunqing-me/RICK)) for few-shot image generation:
+```
+@inproceedings{zhao2023exploring,
+  title={Exploring incompatible knowledge transfer in few-shot image generation},
+  author={Zhao, Yunqing and Du, Chao and Abdollahzadeh, Milad and Pang, Tianyu and Lin, Min and Yan, Shuicheng and Cheung, Ngai-Man},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={7380--7391},
+  year={2023}
 }
 ```
 
