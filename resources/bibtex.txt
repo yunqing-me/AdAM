@@ -1,0 +1,6 @@
+@inproceedings{zhao2022fsig-ip,
+  title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
+  author={Yunqing Zhao, Milad Abdollahzadeh, Keshigeyan Chandrasegaran, Ngai-Man Cheung},
+  booktitle={Neurips},
+  year={2022}
+}
