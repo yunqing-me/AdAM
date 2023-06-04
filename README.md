@@ -5,6 +5,8 @@
     <a href="https://keshik6.github.io/" target="_blank" style="text-decoration: none;">Keshigeyan Chandrasegaran</a>&nbsp;,&nbsp;
     <a href="https://miladabd.github.io/" target="_blank" style="text-decoration: none;">Milad Abdollahzadeh</a>&nbsp;,&nbsp;
     <a href="https://sites.google.com/site/mancheung0407/" target="_blank" style="text-decoration: none;">Ngai&#8209;Man Cheung</a></br>
+</p>
+<p align='center' style="text-align:center;font-size:1.25em;">
 Singapore University of Technology and Design (SUTD)<br/>
 </p>
 
@@ -15,14 +17,12 @@ Singapore University of Technology and Design (SUTD)<br/>
 </b>
 </p>
 
-<p align='center' style="text-align:center;font-size:2.5 em;">
+<p align='left' style="text-align:left;font-size:1.3em;">
 <b>
-    <a href="https://yunqing-me.github.io/AdAM/" target="_blank" style="text-decoration: none;">Project Page</a>&nbsp;/&nbsp;
-    <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/d0ac1ed0c5cb9ecbca3d2496ec1ad984.png" target="_blank" style="text-decoration: none;">Poster</a>&nbsp;/&nbsp;
-    <a href="https://drive.google.com/file/d/1hNSIlu0zhjGvqq-gG928jIICCCxuhFHz/view?usp=share_link" target="_blank" style="text-decoration: none;">Slides</a>&nbsp;/&nbsp;
-    <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/7b122d0a0dcb1a86ffa25ccba154652b-Paper-Conference.pdf" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;
-    <!-- /&nbsp; -->
-    <!-- <a href="https://recorder-v3.slideslive.com/?share=74947&s=c88e53c5-a3c2-46c9-9719-092b74eca0c2" target="_blank" style="text-decoration: none;">Talk</a>&nbsp; -->
+    [<a href="https://yunqing-me.github.io/AdAM/" target="_blank" style="text-decoration: none;">Project Page</a>]&nbsp;&nbsp;
+    [<a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/d0ac1ed0c5cb9ecbca3d2496ec1ad984.png" target="_blank" style="text-decoration: none;">Poster</a>]&nbsp;&nbsp;
+    [<a href="https://drive.google.com/file/d/1hNSIlu0zhjGvqq-gG928jIICCCxuhFHz/view?usp=share_link" target="_blank" style="text-decoration: none;">Slides</a>]&nbsp;&nbsp;
+    [<a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/7b122d0a0dcb1a86ffa25ccba154652b-Paper-Conference.pdf" target="_blank" style="text-decoration: none;">Paper</a>]
 </b>
 </p>
 
@@ -47,7 +47,7 @@ The model can perform GAN adaptation using very few samples from target domains 
 Alternatively, A suitable conda environment named `adam` can be created and activated with:
 ```
 git clone https://github.com/yunqing-me/AdAM.git
-conda env create -f environment.yaml
+conda env create -f environment.yml
 conda activate adam
 cd AdAM
 ```
