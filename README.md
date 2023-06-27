@@ -7,13 +7,13 @@
     <a href="https://sites.google.com/site/mancheung0407/" target="_blank" style="text-decoration: none;">Ngai&#8209;Man Cheung</a></br>
 </p>
 <p align='center' style="text-align:center;font-size:1.25em;">
-Singapore University of Technology and Design (SUTD)<br/>
+Singapore University of Technology and Design<br/>
 </p>
 
-<p align='center';>
+<p align='left';>
 <b>
-<em>The Thirty-Sixth Annual Conference on Neural Information Processing Systems (NeurIPS 2022);</em> <br>
-<em>Ernest N. Morial Convention Center, New Orleans, LA, USA.</em>
+<em>NeurIPS 2022, </em>
+<em>Ernest N. Morial Convention Center, New Orleans, LA, USA</em>
 </b>
 </p>
 
@@ -35,6 +35,8 @@ In this research, we propose Adaptation-Aware Kernel Modulation (AdAM) for few-s
 
 The model can perform GAN adaptation using very few samples from target domains with different proximity to the source.
 ```
+
+![Teaser image](./static/overview.jpg)
 
 ## Installation and Environment:
 
