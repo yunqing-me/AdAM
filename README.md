@@ -1,10 +1,10 @@
 <h1 align='center' style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;">
                 Few-shot Image Generation via <br> Adaptation-Aware Kernel Modulation</h1>
 <p align='center' style="text-align:center;font-size:1.25em;">
-    <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en" target="_blank" style="text-decoration: none;">Yunqing Zhao</a>&nbsp;,&nbsp;
-    <a href="https://keshik6.github.io/" target="_blank" style="text-decoration: none;">Keshigeyan Chandrasegaran</a>&nbsp;,&nbsp;
-    <a href="https://miladabd.github.io/" target="_blank" style="text-decoration: none;">Milad Abdollahzadeh</a>&nbsp;,&nbsp;
-    <a href="https://sites.google.com/site/mancheung0407/" target="_blank" style="text-decoration: none;">Ngai&#8209;Man Cheung</a></br>
+    <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en" target="_blank" style="text-decoration: none;">Yunqing Zhao<sup>*</sup></a>&nbsp;,&nbsp;
+    <a href="https://keshik6.github.io/" target="_blank" style="text-decoration: none;">Keshigeyan Chandrasegaran<sup>*</sup></a>&nbsp;,&nbsp;
+    <a href="https://miladabd.github.io/" target="_blank" style="text-decoration: none;">Milad Abdollahzadeh<sup>*</sup></a>&nbsp;,&nbsp;
+    <a href="https://sites.google.com/site/mancheung0407/" target="_blank" style="text-decoration: none;">Ngai&#8209;Man Cheung<sup>&#8224</sup></a></br>
 </p>
 <p align='center' style="text-align:center;font-size:1.25em;">
 Singapore University of Technology and Design<br/>
@@ -13,7 +13,7 @@ Singapore University of Technology and Design<br/>
 <p align='left';>
 <b>
 <em>NeurIPS 2022, </em>
-<em>Ernest N. Morial Convention Center, New Orleans, LA, USA</em>
+<em>Ernest N. Morial Convention Center, New Orleans, LA, USA.</em> <sup>*</sup> Equal Contribution
 </b>
 </p>
 
