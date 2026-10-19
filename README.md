@@ -42,17 +42,22 @@ The model can perform GAN adaptation using very few samples from target domains 
 
 - Platform: Linux
 - Tesla V100 GPUs / (or A100 GPUs)
-- PyTorch 1.7.0
-- Python 3.6.9
+- PyTorch 1.12.1
+- Python 3.8.0
+- CUDA 11.3.1 (`cudatoolkit`)
+- torchvision 0.13.1 / torchaudio 0.12.1
 - lmdb, tqdm
 
-Alternatively, A suitable conda environment named `adam` can be created and activated with:
+The reference Linux/CUDA environment is defined in `environment.yml`. Create and activate the `adam` environment with:
 ```
 git clone https://github.com/yunqing-me/AdAM.git
+cd AdAM
 conda env create -f environment.yml
 conda activate adam
-cd AdAM
 ```
+
+Use `environment.yml` as the source of truth for dependency versions. For pip-based setups, `requirements.txt` uses matching versions for packages shared with the YAML, retains additional Python dependencies, and includes the official CUDA 11.3 PyTorch wheel index. The full Conda environment is created with the commands above.
+
 ## Analysis of Source ↦ Target distance
 
 We analyze the Source ↦ Target domain relation in the Sec. 3 (and Supplementary). See below for related steps in this analysis.
