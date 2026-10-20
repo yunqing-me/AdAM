@@ -222,7 +222,7 @@
         <div class="content has-text-justified">
         <p>
 			    Few-shot image generation (FSIG) aims to learn to generate new and diverse samples given an extremely limited number of samples from a domain, e.g., 10 training samples. 
-          Recent work has addressed the problem using transfer learning approach, leveraging a GAN pretrained on a large-scale source domain dataset and adapting 
+          Recent work has addressed the problem using a transfer learning approach, leveraging a GAN pretrained on a large-scale source domain dataset and adapting
           that model to the target domain based on very limited target domain samples. Central to recent FSIG methods are knowledge preserving criteria, 
           which aim to select a subset of source model's knowledge to be preserved into the adapted model. 
         </p>
@@ -236,7 +236,7 @@
           To address the limitation of existing methods, as our second contribution, 
           we propose adaptation-aware kernel modulation to address general FSIG of different source-target domain proximity. 
           Extensive experimental results show that the proposed method consistently achieves SOTA performance across source/target domains of different proximity, 
-          including challenging setups when source and target domains are more apart.
+          including challenging setups when source and target domains are farther apart.
         </p>
         </div>
       </div>
@@ -397,7 +397,7 @@
 							<b>3: </b>
 							Schematic diagram of our proposed Importance Probing Mechanism: 
               We measure the importance of each kernel for the target domain after probing and preserve source domain knowledge that is important for target domain adaptation. 
-              The same operations are applied to discriminator.
+              The same operations are applied to the discriminator.
 						</td>
 					</tr>
 				</table>
@@ -446,7 +446,7 @@
                   10-shot real target samples for adaptation.
                   <b>Mid, Right:</b>: For target domain with close proximity (e.g.Babies, top),
                   our method can generate high quality images with more refined details and diversity knowledge,
-                  achieving best FID and Intra-LPIPS socre. For target domain which is distant (e.g., Cat, bottom),
+                  achieving best FID and Intra-LPIPS score. For target domain which is distant (e.g., Cat, bottom),
                   TGAN/FreezeD overfit to the 10-shot samples and others fail. In contrast, our method preserves
                   meaningful semantic features at different levels (e.g., posture and color) from source, achieving a
                   good trade off between quality and diversity. In particular, our Intra-LPIPS approaches that of EWC,
@@ -481,7 +481,7 @@
     }</code></pre>
           <div class="content has-text-justified">
             <p>
-				Meanwhile, we also demonstrate a relevant research for few-shot image generation, via Removing In-Compatible Knowledge (<a href="https://yunqing-me.github.io/RICK/">RICK</a>, CVPR-2023) for few-shot Transfer to fine-tune the pretrained GANs: </a>
+				Meanwhile, we also demonstrate related research on few-shot image generation, via Removing In-Compatible Knowledge (<a href="https://yunqing-me.github.io/RICK/">RICK</a>, CVPR-2023) for few-shot Transfer to fine-tune the pretrained GANs: </a>
             </p>
             <pre><code>@inproceedings{zhao2023exploring,
               title={Exploring incompatible knowledge transfer in few-shot image generation},
