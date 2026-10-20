@@ -119,7 +119,7 @@ python noise_generation.py
 # Experiments
 
 
-## Step 1. Importance Probing (IP) to indentify important kernels for target adaptation
+## Step 1. Importance Probing (IP) to identify important kernels for target adaptation
 
 ~~~bash
 bash _bash_importance_probing.sh
