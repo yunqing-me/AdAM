@@ -29,9 +29,9 @@ Singapore University of Technology and Design<br/>
 
 ----------------------------------------------------------------------
 
-#### TL, DR: 
+#### TL;DR:
 ```
-In this research, we propose Adaptation-Aware Kernel Modulation (AdAM) for few-shot image generation, that aims to identify kernels in source GAN important for target adaptation. 
+In this research, we propose Adaptation-Aware Kernel Modulation (AdAM) for few-shot image generation. AdAM aims to identify kernels in the source GAN that are important for target adaptation.
 
 The model can perform GAN adaptation using very few samples from target domains with different proximity to the source.
 ```
@@ -60,7 +60,7 @@ Use `environment.yml` as the source of truth for dependency versions. For pip-ba
 
 ## Analysis of Source ↦ Target distance
 
-We analyze the Source ↦ Target domain relation in the Sec. 3 (and Supplementary). See below for related steps in this analysis.
+We analyze the Source ↦ Target domain relation in Sec. 3 and the supplementary material. See below for related steps in this analysis.
 
 Step 1. `git clone https://github.com/rosinality/stylegan2-pytorch.git`
 
@@ -139,7 +139,7 @@ Training dynamics and evaluation results will be shown on [`wandb`](https://wand
 We note that, ideally Step 1. and Step 2. can be combined together. Here, for simplicity we use two steps as demonstration.
 
 ### Evaluation of Intra-LPIPS:
-Use Babies and AFHQ-Cat as example: download images from [here](https://drive.google.com/file/d/1JQDEV_I2wIULqjIp6ms1hpsGgUYZKTgG/view?usp=share_link), then move the unzipped folder into `./cluster_center`, then refer to `Evaluator` in `AdAM_main_adaptation.py`.
+Use Babies and AFHQ-Cat as examples: download images from [here](https://drive.google.com/file/d/1JQDEV_I2wIULqjIp6ms1hpsGgUYZKTgG/view?usp=share_link), then move the unzipped folder into `./cluster_center`, then refer to `Evaluator` in `AdAM_main_adaptation.py`.
 
 # Data Repository
 The estimated fisher information (i.e., the output of Importance Probing) and Weights (i.e., the output of the main adaptation corresponding to Figure 4 in the main paper) can be found [Here](https://drive.google.com/drive/folders/11uZjqJZl7ImapEndU4locAr2miHCJvDY?usp=share_link).
@@ -174,7 +174,7 @@ Target Samples: [Link](https://drive.google.com/drive/folders/10skBzKjr8jJbWvTXK
 
 Follow the experiment part in this repo and you can produce your customized results.
 
-# Bibtex
+# BibTeX
 If you find this project useful in your research, please consider citing our paper:
 
 ```
@@ -187,7 +187,7 @@ If you find this project useful in your research, please consider citing our pap
     url={https://openreview.net/forum?id=Z5SE9PiAO4t}
 }
 ```
-Meanwhile, we also demonstrate a relevant research that aims to identify and Remove InCompatible Knowledge ([RICK](https://github.com/yunqing-me/RICK), CVPR-2023) for few-shot image generation:
+Meanwhile, we also demonstrate related research that aims to identify and Remove InCompatible Knowledge ([RICK](https://github.com/yunqing-me/RICK), CVPR-2023) for few-shot image generation:
 ```
 @inproceedings{zhao2023exploring,
   title={Exploring incompatible knowledge transfer in few-shot image generation},
@@ -202,7 +202,7 @@ Meanwhile, we also demonstrate a relevant research that aims to identify and Rem
 
 We appreciate the wonderful base implementation of StyleGAN-V2 from [@rosinality](https://github.com/rosinality). We thank [@mseitzer](https://github.com/mseitzer/pytorch-fid), [@Ojha](https://github.com/utkarshojha/few-shot-gan-adaptation) and [@richzhang](https://github.com/richzhang/PerceptualSimilarity) for their implementations on FID score and intra-LPIPS.
 
-We also thank for the useful training and evaluation tool used in this work, from [@Miaoyun](https://github.com/MiaoyunZhao/GANmemory_LifelongLearning).
+We also thank [@Miaoyun](https://github.com/MiaoyunZhao/GANmemory_LifelongLearning) for the useful training and evaluation tools used in this work.
 
 
 
