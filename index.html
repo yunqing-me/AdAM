@@ -1,66 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="description" content="AdAM: adaptation-aware kernel modulation for few-shot image generation. Original results on domain proximity, target-aware knowledge selection, and importance probing.">
+  <meta name="keywords" content="AdAM, few-shot image generation, adaptation-aware kernel modulation, transfer learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdAM: Parameter-Efficient Few-shot Image Generation</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <link rel="canonical" href="https://yunqing-me.github.io/AdAM/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AdAM: Few-shot Image Generation via Adaptation-Aware Kernel Modulation">
+  <meta property="og:description" content="AdAM: adaptation-aware kernel modulation for few-shot image generation. Original results on domain proximity, target-aware knowledge selection, and importance probing.">
+  <meta property="og:url" content="https://yunqing-me.github.io/AdAM/">
+  <meta property="og:image" content="https://yunqing-me.github.io/AdAM/resources/overview.png">
+  <meta property="og:image:alt" content="AdAM: target-aware knowledge selection and kernel modulation for few-shot image generation.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>AdAM: Few-shot Image Generation via Adaptation-Aware Kernel Modulation</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/polish.css">
   <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script defer src="./static/js/polish.js"></script>
 </head>
 <body>
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  </div>
-</nav>
-
-
+<div class="navbar" aria-hidden="true"></div>
+<main>
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Few-shot Image Generation via  <br> Adaptation-Aware Kernel Modulation </h1>
+          <h1 class="title is-1 publication-title"><span class="key-finding">AdAM:</span> Few-shot Image Generation via Adaptation-Aware Kernel Modulation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://www.linkedin.com/in/yunqing-zhao/">Yunqing Zhao</a><sup>*</sup>,</span>
@@ -71,65 +42,39 @@
               <a href="https://miladabd.github.io/">Milad Abdollahzadeh</a><sup>*</sup>,
             </span>
             <span class="author-block">
-              <a href="https://sites.google.com/site/mancheung0407/">Ngai-Man Cheung</a><sup>&#8224</sup>
-			      </span><br>
-            <br>
-          </div>
+              <a href="https://sites.google.com/site/mancheung0407/">Ngai-Man Cheung</a><sup>†</sup>
+			      </span></div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">Singapore University of Technology and Design (SUTD)</span><br>
           </div>
 
-          <div class="column has-text-centered">
+          <p class="author-note"><sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author.</p><div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/7b122d0a0dcb1a86ffa25ccba154652b-Paper-Conference.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
+<span class="link-block"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/7b122d0a0dcb1a86ffa25ccba154652b-Paper-Conference.pdf" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
-                </a>
-              </span>
-              <!-- <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span> -->
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/d0ac1ed0c5cb9ecbca3d2496ec1ad984.png"
-                   class="external-link button is-normal is-rounded is-dark">
+                </a></span>
+<span class="link-block"><a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/d0ac1ed0c5cb9ecbca3d2496ec1ad984.png" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Poster</span>
-                  </a>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://drive.google.com/file/d/1hNSIlu0zhjGvqq-gG928jIICCCxuhFHz/view"
-                   class="external-link button is-normal is-rounded is-dark">
+                  </a></span>
+<span class="link-block"><a href="https://drive.google.com/file/d/1hNSIlu0zhjGvqq-gG928jIICCCxuhFHz/view" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
                   <span>Slides</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/yunqing-me/AdAM"
-                   class="external-link button is-normal is-rounded is-dark">
+                </a></span>
+<span class="link-block"><a href="https://github.com/yunqing-me/AdAM" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                  </a>
-              </span>
-            </div>
+                  </a></span>
+<span class="link-block"><a href="#BibTeX" class="button is-normal is-rounded is-dark"><span class="icon" aria-hidden="true"><i class="fas fa-quote-right"></i></span><span>BibTeX</span></a></span></div>
 
           </div>
         </div>
@@ -138,338 +83,129 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
+<section class="section" id="abstract">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-2" >Abstract</h2>
+        <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
-        <p>
-			    Few-shot image generation (FSIG) aims to learn to generate new and diverse samples given an extremely limited number of samples from a domain, e.g., 10 training samples. 
-          Recent work has addressed the problem using a transfer learning approach, leveraging a GAN pretrained on a large-scale source domain dataset and adapting
-          that model to the target domain based on very limited target domain samples. Central to recent FSIG methods are knowledge preserving criteria, 
-          which aim to select a subset of source model's knowledge to be preserved into the adapted model. 
-        </p>
-        <p>
-          However, a major limitation of existing methods is that their knowledge preserving criteria consider only source domain/source task, 
-          and they fail to consider target domain/adaptation task in selecting source model's knowledge, 
-          casting doubt on their suitability for setups of different proximity between source and target domain. 
-          Our work makes two contributions. As our first contribution, we re-visit recent FSIG works and their experiments. 
-          Our important finding is that, under setups which assumption of close proximity between source and target domains is relaxed, 
-          existing state-of-the-art (SOTA) methods which consider only source domain/source task in knowledge preserving perform no better than a baseline fine-tuning method. 
-          To address the limitation of existing methods, as our second contribution, 
-          we propose adaptation-aware kernel modulation to address general FSIG of different source-target domain proximity. 
-          Extensive experimental results show that the proposed method consistently achieves SOTA performance across source/target domains of different proximity, 
-          including challenging setups when source and target domains are farther apart.
-        </p>
+<p>Few-shot image generation (FSIG) aims to learn to generate new and diverse samples given an extremely limited number of samples from a domain, e.g., 10 training samples.</p>
+<p>Recent work has addressed the problem using a transfer learning approach, leveraging a GAN pretrained on a large-scale source domain dataset and adapting that model to the target domain based on very limited target domain samples. Central to recent FSIG methods are knowledge preserving criteria, which aim to select a subset of source model&#x27;s knowledge to be preserved into the adapted model.</p>
+<p>However, a major limitation of existing methods is that their knowledge preserving criteria consider only source domain/source task, and they fail to consider <strong class="key-finding">target domain/adaptation task</strong> in selecting source model&#x27;s knowledge, casting doubt on their suitability for setups of different proximity between source and target domain.</p>
+<p>Our work makes two contributions. As our first contribution, we re-visit recent FSIG works and their experiments. Our important finding is that, under setups which assumption of close proximity between source and target domains is relaxed, existing state-of-the-art (SOTA) methods which consider only source domain/source task in knowledge preserving perform no better than a baseline fine-tuning method.</p>
+<p>To address the limitation of existing methods, as our second contribution, we propose <strong class="key-finding">adaptation-aware kernel modulation</strong> to address general FSIG of different source-target domain proximity. Extensive experimental results show that the proposed method consistently achieves SOTA performance across source/target domains of different proximity, including challenging setups when source and target domains are farther apart.</p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
   </div>
 </section>
 
-
-<section class="section">
+<section class="section paper-extension" id="domain-proximity">
   <div class="container is-max-desktop">
-
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <!-- <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+      <div class="column is-full-width">
+        <h2 class="title is-3">Why the Target Domain Matters</h2>
+        <div class="content study-body">
+<p><strong class="key-finding">Inappropriate knowledge transfer.</strong> Preserving source knowledge can carry human attributes, including caps, hairstyles, and glasses, into cat generation.</p>
+<figure class="study-figure domain-figure"><img class="round" src="./resources/failure_cat_ours.png" width="852" height="923" alt="Figure 3: source-domain caps, hairstyles and glasses persist in cats generated by EWC, CDC and DCL; AdAM alleviates these artifacts" loading="lazy" decoding="async"><figcaption class="paper-source">Source: <a href="https://arxiv.org/html/2210.16559v3#S3.F3">Figure 3</a> · FFHQ → AFHQ-Cat, 10-shot adaptation.</figcaption></figure>
         </div>
-      </div> -->
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <!-- <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div> -->
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <!-- <div class="column is-full-width"> -->
-        <!-- <h2 class="title is-3">Animation</h2> -->
-
-        <!-- Interpolating. -->
-        <!-- <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/> -->
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div> -->
-        <!--/ Re-rendering. -->
-
       </div>
     </div>
-    <!-- / Animation. -->
+  </div>
+</section>
 
-
-    <!-- Overview -->
+<section class="section" id="overview">
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Overview</h2>
-
         <div class="content has-text-justified">
-			<center>
-				<table align=center width=880px>
-					<tr>
-						<td width=260px>
-							<center>
-								<img class="round" style="width:880px" src="./resources/overview.png"/>
-							</center>
-						</td>
-					</tr>
-				</table>
-				<table align=center width=880px>
-					<tr>
-						<td>
-							<p style="text-align:justify; text-justify:inter-ideograph;">
-                <h4 class="title is-5">Contributions</h4>
-							<b>1: </b>
-							We consider the problem of FSIG with Transfer Learning using very limited target samples (e.g., 10-shot). <br>
-							<b>2: </b>
-							Our work makes two contributions: 
-							<ul>
-								<li>We discover that when the close proximity assumption between source-target domain is relaxed, SOTA FSIG methods, e.g., EWC (Li et al.), CDC (Ojha et al.), DCL (Zhao et al.), 
+<figure class="study-figure "><img class="round" src="./resources/overview.png" width="5312" height="1661" alt="Figure 1: few-shot image generation, the domain-proximity finding, and adaptation-aware kernel importance probing" loading="lazy" decoding="async"></figure>
+<div class="overview-notes">
+  <h3 class="title is-5">Contributions</h3>
+  <p>We consider FSIG with transfer learning using very limited target samples, such as 10-shot adaptation.</p>
+<ul>
+								<li>We discover that when the close proximity assumption between source-target domain is relaxed, SOTA FSIG methods, e.g., EWC (Li et al.), CDC (Ojha et al.), DCL (Zhao et al.),
                   which consider only source domain/source task in knowledge preserving perform no better than a baseline fine-tuning method, e.g., TGAN, (Wang et al.).</li>
 								<li>We propose a novel adaptation-aware kernel modulation for FSIG that achieves SOTA performance across source / target domains with different proximity. </li>
 							</ul>
-							<b>3: </b>
-							Schematic diagram of our proposed Importance Probing Mechanism: 
-              We measure the importance of each kernel for the target domain after probing and preserve source domain knowledge that is important for target domain adaptation. 
-              The same operations are applied to the discriminator.
-						</td>
-					</tr>
-				</table>
-				<table align=center width=880px>
-					<tr>
-						<td width=260px>
-							<!-- <center>
-								<img class="round" style="width:880px" src="./resources/method.jpg"/>
-							</center> -->
-						</td>
-					</tr>
-				</table>
-			</center>
+  <h3 class="title is-5">Two-Stage Adaptation</h3>
+  <p><strong class="key-finding">Probe for the target.</strong> Freeze pretrained kernels and train low-rank modulation parameters for 500 iterations. Their Fisher information scores kernel importance for the adaptation task.</p>
+  <p><strong class="key-finding">Adapt selectively.</strong> Restart from source weights: modulate important kernels with their base weights frozen, and directly finetune other kernels. Apply the procedure to both generator and discriminator.</p>
+  <p class="paper-source">Source: <a href="https://arxiv.org/html/2210.16559v3#S4">Section 4 and Algorithm 1</a>.</p>
+</div>
         </div>
       </div>
     </div>
-    <!--/ Overview -->
-
-    <!-- Experiment-->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Experiment Results</h2>
-
-        <div class="content has-text-justified">
-			<center>
-				<table align=center width=880px>
-					<tr>
-						<td width=260px>
-							<center>
-								<img class="round" style="width:880px" src="./resources/babies_compare.png"/>
-							</center>
-							<center>
-								<img class="round" style="width:880px" src="./resources/cats_compare.png"/>
-							</center>
-						</td>
-					</tr>
-				</table>
-        <table align=center width=850px>
-          <center>
-            <tr>
-              <td>
-                <p style="text-align:justify; text-justify:inter-ideograph;"> 
-                  <b>Qualitative and quantitative comparison of 10-shot image generation with different FSIG methods.</b>
-                  Images of each column are from the same noise input (Last row).
-                  <b>Left</b>:
-                  10-shot real target samples for adaptation.
-                  <b>Mid, Right:</b>: For target domain with close proximity (e.g.Babies, top),
-                  our method can generate high quality images with more refined details and diversity knowledge,
-                  achieving best FID and Intra-LPIPS score. For target domain which is distant (e.g., Cat, bottom),
-                  TGAN/FreezeD overfit to the 10-shot samples and others fail. In contrast, our method preserves
-                  meaningful semantic features at different levels (e.g., posture and color) from source, achieving a
-                  good trade off between quality and diversity. In particular, our Intra-LPIPS approaches that of EWC,
-                  while our generated images have much better quality qualitatively and quantitatively
-              </td>
-            </tr>
-          </center>
-        </table>
-			</center>
-        </div>
-      </div>
-    </div>
-    <!--/ Overview -->
-    
   </div>
 </section>
 
+<section class="section" id="experiments">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experiment Results</h2>
+        <div class="content has-text-justified">
+<figure class="study-figure "><img class="round" src="./resources/babies_compare.png" width="8657" height="3652" alt="Figure 4, Babies: 10-shot target samples and same-latent comparisons of generation quality and diversity" loading="lazy" decoding="async"></figure>
+<figure class="study-figure "><img class="round" src="./resources/cats_compare.png" width="8580" height="3619" alt="Figure 4, Cat: 10-shot target samples and same-latent comparisons across adaptation methods" loading="lazy" decoding="async"></figure>
+<p><strong class="key-finding">10-shot comparisons.</strong> Images in each column share the same latent input. The bottom row shows outputs of the pretrained source generator; the left panel contains the 10 real target samples.</p>
+<p><strong class="key-finding">Close target: Babies.</strong> AdAM generates images with refined details and diverse features. The original comparison reports both FID and Intra-LPIPS.</p>
+<p><strong class="key-finding">Distant target: Cat.</strong> The comparison shows overfitting in TGAN/FreezeD and inappropriate source knowledge in several preservation baselines.</p>
+<p>AdAM preserves useful features such as posture and color. Its Intra-LPIPS approaches EWC's, while the qualitative results and FID indicate better generation quality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section paper-extension" id="quantitative-results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <div class="content study-body">
+<div class="study-setting"><p>10 target images · FFHQ source · StyleGAN2 · 256 × 256 resolution. FID uses 5,000 generated images and the full target dataset.</p></div>
+<table class="score-table" id="main-results"><caption>Table 2 excerpt · Selected targets · FID ↓</caption><thead><tr><th scope="col">Method</th><th scope="col">Babies</th><th scope="col">AFHQ-<br>Cat</th><th scope="col">AFHQ-<br>Wild</th></tr></thead><tbody>
+<tr><th scope="row">TGAN</th><td>101.58</td><td>64.68</td><td>81.30</td></tr>
+<tr><th scope="row">TGAN+ADA</th><td>97.91</td><td>80.16</td><td>81.55</td></tr>
+<tr><th scope="row">FreezeD</th><td>96.25</td><td>63.60</td><td>77.18</td></tr>
+<tr><th scope="row">EWC</th><td>79.93</td><td>74.61</td><td>92.83</td></tr>
+<tr><th scope="row">CDC</th><td>69.13</td><td>176.21</td><td>135.13</td></tr>
+<tr><th scope="row">DCL</th><td>56.48</td><td>156.82</td><td>115.93</td></tr>
+<tr><th scope="row"><strong>AdAM (Ours)</strong></th><td class="best-score">48.83</td><td class="best-score">58.07</td><td class="best-score">36.87</td></tr>
+</tbody></table>
+<p><strong class="key-finding">Target-aware preservation.</strong> EWC, CDC, and DCL have higher FID than TGAN on Cat and Wild. AdAM improves over these baselines on both targets.</p>
+<p class="paper-source">Source: <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/7b122d0a0dcb1a86ffa25ccba154652b-Paper-Conference.pdf#page=8">Table 2, NeurIPS 2022 paper</a> · <a href="https://arxiv.org/html/2210.16559v3#S5.T2">Full table in HTML</a>. Lower FID is better.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section paper-extension" id="importance-probing">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">What Importance Probing Adds</h2>
+        <div class="content study-body">
+<p><strong class="key-finding">Selection matters.</strong> Modulating all kernels without probing increases FID, especially for the distant targets shown below.</p>
+<figure class="study-figure "><img class="round" src="./resources/ablation_fi_shot.png" width="2032" height="544" alt="Figure 5: estimated Fisher information of kernels and FID across 10, 25, 50, 100 and 200 target samples" loading="lazy" decoding="async"></figure>
+<table class="score-table" id="probing-ablation"><caption>Figure 5 excerpt · 10-shot probing ablation · FID ↓</caption><thead><tr><th scope="col">Method</th><th scope="col">Babies</th><th scope="col">AFHQ-<br>Cat</th><th scope="col">AFHQ-<br>Wild</th></tr></thead><tbody>
+<tr><th scope="row">AdAM (w/o probing)</th><td>54.46</td><td>82.41</td><td>81.24</td></tr>
+<tr><th scope="row"><strong>AdAM (Ours)</strong></th><td class="best-score">48.83</td><td class="best-score">58.07</td><td class="best-score">36.87</td></tr>
+</tbody></table>
+<p class="paper-source">Source: <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/7b122d0a0dcb1a86ffa25ccba154652b-Paper-Conference.pdf#page=10">Figure 5, NeurIPS 2022 paper</a>. The ablation modulates every kernel when probing is removed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <p>
-        If you find our research useful in your work, please consider citing our paper:  
+        If you find our research useful in your work, please consider citing our paper:
     </p>
     <pre><code>@inproceedings{zhao2022fewshot,
       title={Few-shot Image Generation via Adaptation-Aware Kernel Modulation},
@@ -481,7 +217,7 @@
     }</code></pre>
           <div class="content has-text-justified">
             <p>
-				Meanwhile, we also demonstrate related research on few-shot image generation, via Removing In-Compatible Knowledge (<a href="https://yunqing-me.github.io/RICK/">RICK</a>, CVPR-2023) for few-shot Transfer to fine-tune the pretrained GANs: </a>
+				Meanwhile, we also demonstrate related research on few-shot image generation, via Removing In-Compatible Knowledge (<a href="https://yunqing-me.github.io/RICK/">RICK</a>, CVPR-2023) for few-shot Transfer to fine-tune the pretrained GANs:
             </p>
             <pre><code>@inproceedings{zhao2023exploring,
               title={Exploring incompatible knowledge transfer in few-shot image generation},
@@ -493,36 +229,24 @@
           </div>
   </div>
 </section>
-
-
+</main>
 <footer class="footer">
   <div class="container">
-    <!-- <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div> -->
+
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            This website is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This project page is constructed using the wonderful template provided by <a
-            href="https://nerfies.github.io/">Nerfies</a>.
+            This project page is constructed using the wonderful template provided by <a href="https://nerfies.github.io/">Nerfies</a>.
           </p>
         </div>
       </div>
     </div>
   </div>
 </footer>
-
 </body>
 </html>
